@@ -1,0 +1,2 @@
+[Thu Nov 08 14:36:09.787973 2018] [php7:error] [pid 33521] [client 10.3.0.20:9041] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/jagrdkpk-m2/sprite.php on line 17
+[Thu Nov 08 14:36:49.547655 2018] [php7:error] [pid 33874] [client 10.3.0.20:9142] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/jagrdkpk-m2/sprite.php on line 17

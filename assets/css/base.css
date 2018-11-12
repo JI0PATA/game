@@ -1,0 +1,397 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+}
+
+*:active, *:focus {
+    outline: none;
+}
+
+@font-face {
+    font-family: SortsMillGoudy;
+    src: url(../fonts/SortsMillGoudy-Regular.ttf);
+}
+body {
+    font-family: SortsMillGoudy;
+    overflow: hidden;
+}
+ul,
+ol {
+    list-style-type: none;
+    line-height: 1.3;
+}
+ul li,
+ol li {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.screen,
+.score-value span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.screen-start,
+.screen-ranking {
+    width: 500px;
+    height: 500px;
+    box-shadow: 1px 1px 5px 1px #fff;
+}
+.screen-game {
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/bg-game.png);
+    background-size: cover;
+}
+.panel {
+    width: 100%;
+    padding: 50px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+table {
+    overflow-y: auto;
+    max-height: 27vh;
+    display: block;
+    margin-bottom: 2vh;
+}
+tr > th:nth-child(1),
+tr > td:nth-child(1) {
+    width: 10%;
+    text-align: left;
+}
+tr > th:nth-child(2),
+tr > td:nth-child(2) {
+    width: 200px;
+    text-align: left;
+}
+tr > td:nth-child(3) {
+    width: 200px;
+    text-align: center;
+}
+td,th {
+    line-height: 2;
+}
+h1 {
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+form {
+    margin-top: 20px;
+}
+
+input[type='text'] {
+    min-width: 200px;
+}
+
+input[type='text'],
+input[type='submit'],
+button {
+    padding: 9px;
+}
+
+input[type='submit'],
+button {
+    background: #778d94;
+    color: #fff;
+    border: none;
+}
+
+.game-panel {
+    position: absolute;
+    color: #fff;
+}
+.game-panel-skills {
+    right: 30px;
+    bottom: 30px;
+}
+.game-panel-user {
+    left: 30px;
+    top: 30px;
+}
+.game-panel-scores {
+    bottom: 30px;
+    left: 30px;
+}
+.user-info {
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+.panel-xp,
+.panel-mp {
+    height: 23px;
+    background: white;
+    margin-bottom: 4px;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+    position: relative;
+}
+.panel-xp {
+    width: 200px;
+}
+.panel-mp {
+    width: 176px;
+}
+.score-value {
+    width: 100%;
+    height: 100%;
+}
+.panel-xp .score-value {
+    background: #9f000a;
+}
+.panel-mp .score-value {
+    background: #004bb8;
+}
+.score-value span {
+    padding-right: 13px;
+}
+.game-panel-skills img {
+    margin-left: -1px;
+}
+.show {
+    z-index: 300;
+}
+
+.showScreenAnim {
+    animation: showScreenAnim .5s forwards;
+    opacity: 0;
+}
+
+@keyframes showScreenAnim {
+    0% {
+        transform: translate(-60%, -50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.hiddenScreenAnim {
+    animation: hiddenScreenAnim .5s forwards;
+    opacity: 1;
+}
+
+@keyframes hiddenScreenAnim {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-60%, -50%);
+        opacity: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.score-value {
+    color: #000;
+    font-weight: bold;
+}
+
+/*************************** INPUTS ***************************/
+.input-field {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+button.disabled {
+    cursor: not-allowed;
+    background: #ccc;
+}
+
+button.input-field  {
+    position: relative;
+    transition: .3s;
+}
+
+button.input-field:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scaleX(0);
+    top: 0;
+    left: 0;
+    transition: transform .5s;
+}
+
+button.input-field:not(.disabled):hover:after {
+    transform: scaleX(1);
+}
+/************************** /INPUTS ***************************/
+
+/*************************** ANIMATION FORM ***************************/
+.animateFromTop {
+    animation: animateFromTop .5s forwards;
+    opacity: 0;
+}
+
+@keyframes animateFromTop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animateFromBottom {
+    animation: animateFromBottom .5s forwards;
+    opacity: 0;
+}
+
+@keyframes animateFromBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/************************** /ANIMATION FORM ***************************/
+
+/*************************** BOARD ***************************/
+
+#board {
+    width: 3000px;
+    height: 200px;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+}
+/************************** /BOARD ***************************/
+
+/*************************** PLAYER ***************************/
+#player {
+    position: absolute;
+    height: 200px;
+    background-size: cover;
+}
+
+.idle {
+    width: 169px;
+    background-image: url("../img/player/idle.png");
+    animation: idle 1s steps(18) infinite;
+}
+
+@keyframes idle {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -3039px;
+    }
+}
+
+.run {
+    width: 203px;
+    background-image: url("../img/player/run.png");
+    animation: run 1s steps(17) infinite;
+}
+
+@keyframes run {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -3463px;
+    }
+}
+/************************** /PLAYER ***************************/
+
+/*************************** UNITS ***************************/
+.unit-left {
+    transform: scaleX(-1);
+    transition: transform .2s;
+}
+
+.unit-right {
+    transform: scaleX(1);
+    transition: transform .2s;
+}
+
+.animPaused {
+    animation-play-state: paused !important;
+}
+
+.dog {
+    position: absolute;
+    width: 128px;
+    height: 85px;
+    background-image: url("../img/dog.png");
+    animation: dogRun steps(8) 1s infinite;
+    bottom: 0;
+    left: -128px;
+}
+
+@keyframes dogRun {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1024px;
+    }
+}
+
+.elf {
+    position: absolute;
+    height: 200px;
+    width: 149px;
+    background-image: url("../img/elf.png");
+    animation: elfRun steps(20) 2s infinite;
+    bottom: 0;
+    left: -150px;
+}
+
+@keyframes elfRun {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -2982px;
+    }
+}
+
+.grinch {
+    height: 200px;
+    width: 154px;
+    position: absolute;
+    background-image: url("../img/grinch.png");
+    animation: grinchRun steps(20) 1s infinite;
+    bottom: -10px;
+    left: -170px;
+}
+
+@keyframes grinchRun {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -3080px;
+    }
+}
+/************************** /UNITS ***************************/
+
+/*************************** TABLE ***************************/
+.selectRow {
+    color: red;
+}
+/************************** /TABLE ***************************/
+
+.panel-xp .score-value {
+    transition: .1s;
+}
